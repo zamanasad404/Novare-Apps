@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Novare Apps · Innovate</title>
+  <meta name="description" content="Novare Apps Hub — PWAs for admin automations and accessible applications. Innovate." />
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="theme-color" content="#0d0d12" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">NE</div>
+      <div class="brand-text">
+        <strong>Novare Apps</strong>
+        <span class="tagline">Innovate</span>
+      </div>
+    </div>
+    <nav class="top-controls" aria-label="Top controls">
+      <button id="installBtn" class="btn ghost" aria-label="Install app" hidden>Install</button>
+      <button id="settingsBtn" class="btn ghost" aria-haspopup="dialog" aria-controls="settingsDialog">Settings</button>
+    </nav>
+  </header>
+
+  <main id="main" class="container" role="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">Your hub for lightweight, useful PWAs</h1>
+      <p>Admin automations, accessible applications, and real-world tools — curated by <strong>Novare Enterprise</strong>.</p>
+      <div class="filters">
+        <input id="search" type="search" placeholder="Search apps…" aria-label="Search apps">
+        <select id="filterPaid" aria-label="Filter by price">
+          <option value="all">All</option>
+          <option value="free">Free</option>
+          <option value="paid">Paid</option>
+        </select>
+        <button id="refreshBtn" class="btn">Refresh list</button>
+        <a id="adminEditLink" class="btn ghost" href="#" hidden rel="noopener">Edit app list</a>
+      </div>
+    </section>
+
+    <section aria-labelledby="apps-title">
+      <h2 id="apps-title" class="visually-hidden">Apps</h2>
+      <div id="appsGrid" class="grid" role="list"></div>
+      <template id="appCardTmpl">
+        <article class="card" role="listitem">
+          <div class="card-head">
+            <h3 class="card-title"></h3>
+            <span class="badge"></span>
+          </div>
+          <p class="card-summary"></p>
+          <div class="card-actions">
+            <a class="btn" data-open target="_blank" rel="noopener">Open</a>
+            <a class="btn ghost" data-info target="_blank" rel="noopener">Info</a>
+            <a class="btn pay" data-buy target="_blank" rel="noopener">Buy</a>
+          </div>
+        </article>
+      </template>
+      <div id="emptyState" class="empty" hidden>No apps found. Try changing filters.</div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <small>© <span id="year"></span> Novare Enterprise — <a href="./privacy.html">Privacy</a> · <a href="./terms.html">Terms</a></small>
+  </footer>
+
+  <dialog id="settingsDialog" aria-label="Settings">
+    <form method="dialog" class="settings">
+      <h2>Settings</h2>
+      <label><input type="checkbox" id="toggleContrast"> High contrast</label>
+      <label><input type="checkbox" id="toggleDyslexia"> Dyslexia-friendly font</label>
+      <label>Text size
+        <input type="range" id="textSize" min="90" max="130" value="100" aria-valuemin="90" aria-valuemax="130" aria-valuenow="100">
+      </label>
+      <menu>
+        <button class="btn ghost" id="closeSettings">Close</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <div id="snackbar" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

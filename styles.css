@@ -1,0 +1,82 @@
+/* styles.css */
+:root{
+  --bg: #0d0d12;
+  --fg: #f4f6fa;
+  --muted:#a7adba;
+  --accent:#007aff;
+  --card:#15151c;
+  --focus:#ffd24a;
+  --pay:#23a559;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height:1.5;
+}
+.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px)}
+.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{left:0;top:0;width:auto;height:auto;background:#000;color:#fff;padding:.5rem 1rem;z-index:1000}
+
+.site-header, .site-footer{display:flex;justify-content:space-between;align-items:center;padding:1rem 1rem;gap:1rem}
+.brand{display:flex;align-items:center;gap:.75rem}
+.logo{width:40px;height:40px;border-radius:.75rem;background:#141418;display:grid;place-items:center;font-weight:800}
+.brand-text strong{display:block}
+.tagline{color:var(--muted);font-size:.9rem}
+
+.container{padding:0 1rem 2rem}
+.hero{display:grid;gap:.75rem;margin:.5rem 0 1rem}
+.filters{display:flex;flex-wrap:wrap;gap:.5rem}
+input[type="search"], select{
+  background:#101016;border:1px solid #242433;border-radius:.6rem;color:var(--fg);
+  padding:.6rem .8rem;min-width:12rem
+}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem}
+.card{background:var(--card);border:1px solid #232335;border-radius:1rem;padding:1rem;display:grid;gap:.6rem}
+.card-head{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.card-title{margin:0;font-size:1.05rem}
+.badge{font-size:.75rem;background:#1e1e2b;border:1px solid #2a2a3b;border-radius:999px;padding:.15rem .5rem;color:#dbe1ff}
+.card-summary{margin:.2rem 0;color:var(--muted)}
+.card-actions{display:flex;gap:.5rem;flex-wrap:wrap}
+
+.btn{background:var(--accent);border:none;color:white;padding:.55rem .9rem;border-radius:.6rem;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.ghost{background:transparent;color:var(--fg);border:1px solid #2a2a3b}
+.btn.pay{background:var(--pay)}
+
+.empty{opacity:.8;text-align:center;padding:2rem;border:1px dashed #2a2a3b;border-radius:.8rem}
+
+.site-footer{border-top:1px solid #1e1e2b;color:var(--muted)}
+
+dialog{border:none;border-radius:1rem;background:var(--card);color:var(--fg);padding:1rem;max-width:400px;width:90%}
+dialog::backdrop{background:rgba(0,0,0,.5)}
+.settings{display:grid;gap:.75rem}
+label{display:flex;align-items:center;gap:.5rem}
+
+#snackbar{position:fixed;left:50%;bottom:1rem;transform:translateX(-50%);background:#1b1b22;color:#fff;padding:.75rem 1rem;border-radius:.6rem;border:1px solid #2a2a3b;display:none;z-index:1000}
+
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+@media (prefers-reduced-motion:no-preference){
+  .card{transition:transform .12s ease}
+  .card:hover{transform:translateY(-2px)}
+}
+
+/* High contrast + Dyslexia-friendly font toggles */
+body.high-contrast{
+  --bg:#ffffff; --fg:#000000; --muted:#222; --card:#f3f3f3; --accent:#0000ee; --pay:#0a7c3e;
+}
+body.dyslexia{
+  font-family: Atkinson Hyperlegible, OpenDyslexic, Verdana, Tahoma, Arial, sans-serif;
+}
+
+/* Scalable text */
+html{font-size:16px}
+body.txt-90{font-size:0.9rem}
+body.txt-100{font-size:1rem}
+body.txt-110{font-size:1.1rem}
+body.txt-120{font-size:1.2rem}
+body.txt-130{font-size:1.3rem}

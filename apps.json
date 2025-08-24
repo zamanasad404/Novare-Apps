@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Accessible Calendar",
+    "url": "https://YOUR_USER.github.io/AccessibleCalendar/",
+    "paid": true,
+    "price_label": "\u00a32.99",
+    "summary": "Simple visual schedule with large text and high-contrast mode.",
+    "badge": "POPULAR",
+    "paypal_ncp_url": "https://www.paypal.com/ncp/payment/REPLACE_ME"
+  },
+  {
+    "title": "ShiftChat",
+    "url": "https://YOUR_USER.github.io/ShiftChat/",
+    "paid": false,
+    "summary": "Quick rota chat & handovers for small teams.",
+    "badge": "NEW"
+  }
+]

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512">
+  <rect width="512" height="512" rx="64" ry="64" fill="#141418"/>
+  <rect x="0" y="410" width="512" height="102" fill="#007aff"/>
+  <g fill="#ffffff" font-family="Verdana, Arial, sans-serif" font-weight="700" font-size="220">
+    <text x="112" y="320">NE</text>
+  </g>
+  <title>Novare Enterprise Icon</title>
+</svg>
